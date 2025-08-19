@@ -13,10 +13,10 @@ public interface ContainerRepository extends JpaRepository <Container, Long>{
     List<Container> findByDestination(String destination);
     List<Container> findByWeightBetween(double minWeight, double maxWeight);
 
-    @Query("SELECT * FROM Container WHERE origin LIKE %?1%")
+    @Query("SELECT c FROM Container c WHERE c.origin LIKE %?1%")
     List<Container> findByOriginContaining(String originPattern);
 
-    @Query("SELECT * FROM Container WHERE name LIKE %?1%")
+    @Query("SELECT c FROM Container c WHERE c.name LIKE %?1%")
     List<Container> findByName(String name);
 
 }
