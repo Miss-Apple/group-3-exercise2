@@ -14,7 +14,6 @@ public class ContainerService {
     @Autowired
     private ContainerRepository containerRepository;
 
-    
     public List<Container> getAllContainers() {
         return containerRepository.findAll();
     }

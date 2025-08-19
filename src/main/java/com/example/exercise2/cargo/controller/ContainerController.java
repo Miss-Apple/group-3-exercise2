@@ -49,8 +49,8 @@ public class ContainerController {
             new ResponseEntity<>("Container is successfully deleted", HttpStatus.OK) : new ResponseEntity<>("Container not found", HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/search/{name}")
-    public ResponseEntity<List<Container>> searchByName(@RequestParam String name) {
+    @GetMapping("/search")
+    public ResponseEntity<List<Container>> searchByName(@RequestParam(name="name") String name) {
         List<Container> results = containerService.searchContainerByName(name);
         return new ResponseEntity<>(results, HttpStatus.OK);
     }
