@@ -16,10 +16,10 @@ public class Container {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private double weight; // in kg
+    private String containerNumber;
     private String origin;
     private String destination;
+    private double weight;
 }
 
 

@@ -29,10 +29,10 @@ public class ContainerService {
     public Container updateContainer(Long id, Container updatedContainer) {
         Container foundContainer = containerRepository.findById(id).orElse(null);
         if (foundContainer != null) {
-            foundContainer.setName(updatedContainer.getName());
-            foundContainer.setWeight(updatedContainer.getWeight());
+            foundContainer.setContainerNumber(updatedContainer.getContainerNumber());
             foundContainer.setOrigin(updatedContainer.getOrigin());
             foundContainer.setDestination(updatedContainer.getDestination());
+            foundContainer.setWeight(updatedContainer.getWeight());
             return containerRepository.save(foundContainer);
         }
         return null;
@@ -67,7 +67,7 @@ public class ContainerService {
         return containerRepository.findByOriginContaining(originPattern);
     }
 
-    public List<Container> searchContainerByName(String name) {
-        return containerRepository.findByName(name);
+    public List<Container> findByContainerNumber(String containerNumber) {
+        return containerRepository.findByContainerNumber(containerNumber);
     }
 }

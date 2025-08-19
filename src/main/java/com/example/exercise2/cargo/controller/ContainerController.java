@@ -50,8 +50,8 @@ public class ContainerController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Container>> searchByName(@RequestParam(name="name") String name) {
-        List<Container> results = containerService.searchContainerByName(name);
+    public ResponseEntity<List<Container>> findByContainerNumber(@RequestParam(name="containerNumber") String containerNumber) {
+        List<Container> results = containerService.findByContainerNumber(containerNumber);
         return new ResponseEntity<>(results, HttpStatus.OK);
     }
 }

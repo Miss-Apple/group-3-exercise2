@@ -16,7 +16,7 @@ public interface ContainerRepository extends JpaRepository <Container, Long>{
     @Query("SELECT c FROM Container c WHERE c.origin LIKE %?1%")
     List<Container> findByOriginContaining(String originPattern);
 
-    @Query("SELECT c FROM Container c WHERE c.name LIKE %?1%")
-    List<Container> findByName(String name);
+    @Query("SELECT c FROM Container c WHERE c.containerNumber LIKE %?1%")
+    List<Container> findByContainerNumber(String containerNumber);
 
 }
