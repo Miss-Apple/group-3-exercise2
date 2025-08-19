@@ -32,7 +32,7 @@ public class ContainerService {
             foundContainer.setName(updatedContainer.getName());
             foundContainer.setWeight(updatedContainer.getWeight());
             foundContainer.setOrigin(updatedContainer.getOrigin());
-            foundContainer.setDestination(foundContainer.getDestination());
+            foundContainer.setDestination(updatedContainer.getDestination());
             return containerRepository.save(foundContainer);
         }
         return null;
